@@ -7,10 +7,12 @@ function getCharacters() {
             infr.innerHTML = `
 
                 <div class="image-container">
-                    <img src="imagen" alt="personaje">
+                    <img src="https://rickandmortyapi.com/api/character/avatar/${idr}.jpeg" alt="personaje">
                 </div>
-                <div class="InfoPersonaje">
-                    <h3>Nombre = ${data.name}</h3>
+                <div class="info">
+                    <h3>Name: ${data.name}</h3>
+                    <h3>Gender: ${data.gender}</h3>
+                    <h3>Species: ${data.species}</h3>
                 </div>
 
             `;
