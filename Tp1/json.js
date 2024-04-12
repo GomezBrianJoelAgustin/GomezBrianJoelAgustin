@@ -7,7 +7,7 @@ function getCharacters() {
             infr.innerHTML = `
 
                 <div class="image-container">
-                    <img src="https://rickandmortyapi.com/api/character/avatar/${idr}.jpeg" alt="personaje">
+                    <img src="https://rickandmortyapi.com/api/character/avatar/${idr}.jpeg" alt="">
                 </div>
                 <div class="info">
                     <h3>Name: ${data.name}</h3>
