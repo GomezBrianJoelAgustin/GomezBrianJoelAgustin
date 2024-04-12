@@ -12,7 +12,6 @@ function getCharacters() {
                 <div class="info">
                     <h3>Name: ${data.name}</h3>
                     <h3>Gender: ${data.gender}</h3>
-                    <h3>Species: ${data.species}</h3>
                 </div>
 
             `;
