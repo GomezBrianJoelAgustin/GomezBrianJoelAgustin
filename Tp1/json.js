@@ -9,7 +9,7 @@ function getCharacters() {
                 <div class="image-container">
                     <img src="https://rickandmortyapi.com/api/character/avatar/${idr}.jpeg" alt="">
                 </div>
-                <div class="info">
+                <div class="info">  
                     <h3>Name: ${data.name}</h3>
                     <h3>Gender: ${data.gender}</h3>
                 </div>
