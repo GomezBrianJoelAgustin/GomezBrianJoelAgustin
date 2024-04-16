@@ -1,29 +1,29 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparador de Personajes</title>
     <link rel="stylesheet" href="style.css">
-    <title>Tp 2</title>
 </head>
 <body>
+    
+    <main>
+        <h1>Match entre personajes de rick and morty</h1>
+        <div class="botones">
+            <input type="number" id="personajeId1" placeholder="ID Personaje 1">
+            <input type="number" id="personajeId2" placeholder="ID Personaje 2">
+            <button onclick="getCharacters()">Buscar</button>
+        </div>
 
-    <section class="intro">
-        <h1>Match entre personajes de Rick and Morty</h1>
-        <p>Ingresar ID de personaje</p>
-    </section>
+        <div id="resultados" class="result-container"></div>
+        <div id="infoPjs"></div>
 
-    <section class="botones">
-        <input type="number" id="personajeId1">
-        <input type="number" id="personajeId2">
-        <button onclick="getCharacters()">Buscar</button>
-    </section>
+        <div id="match"></div>
 
-    <div id="infoPj1"></div>
-    <div id="infopj2"></div>
-    <div id="comparacion"></div>
+    </main>
 
     <script src="function.js"></script>
-    
+
 </body>
 </html>
