@@ -8,36 +8,52 @@ function getCharacters() {
         
         console.log(data);
 
-        const resultados = document.getElementById("resultados");
-    
-        data.forEach(pj =>{
-            const infoPjs = document.getElementById("infoPjs")
- 
-            infoPjs.innerHTML =  `
-                        
-                <div class="info">  
-                    <img src="${pj.image}" alt="">
-                    <h3>Name: ${pj.name}</h3>
-                    <h3>Gender: ${pj.gender}</h3>
-                    <h3>Status: ${pj.status}</h3>
-                    <h3>Specie: ${pj.species}</h3>
-                </div>
-            `;
+        const containerPj1 = document.getElementById("containerPj1");
 
-            
-            if (data[0].gender == data[0+1].gender) {
-                match.innerHTML = `
-                <h1>hay match</h1>
-                `
-            } else {
-                match.innerHTML = `
-                <h1>no hay match</h1>
-                `
-            }
-        })
+        let data1 = data[0];
 
+        containerPj1.innerHTML = `
+            <div id="containerImage">
+                <img src="${data1.image}" alt="">
+            </div>
+            <div id="infoPj">
+                <h3>Name: ${data1.name}</h3>
+                <h3>Gender: ${data1.gender} </h3>
+                <h3>Specie: ${data1.species}</h3>
+            </div>
+        `
+
+        const containerPj2 = document.getElementById("containerPj2");
+
+        let data2 = data[1];
         
+        containerPj2.innerHTML= `
+            <div id="containerImage">
+                <img src="${data2.image}" alt="">
+            </div>
+            <div id="infoPj">
+                <h3>Name: ${data2.name}</h3>
+                <h3>Gender: ${data2.gender} </h3>
+                <h3>Specie: ${data2.species}</h3>
+            </div>
+        `
 
+        const match = document.getElementById("match");
+        
+        if (data1.gender == data2.gender) {
+            match.innerHTML = `
+            <div id="resultados">
+                <h2>Match</h2>
+            </div>
+            `
+            
+        } else {
+            match.innerHTML = `
+            <div id="resultados">
+                <h2>Matchn't</h2>
+            </div>
+            `    
+        }
 
     })
     .catch(error => {
