@@ -12,7 +12,7 @@ function userSearch(){
             console.log(latitudUser)
             console.log(longitudeUser)
 
-            let map = L.map("map").setView(latitudUser,longitudeUser);
+            let map = L.map("map").setView (latitudUser,longitudeUser);
      });
 
 }
