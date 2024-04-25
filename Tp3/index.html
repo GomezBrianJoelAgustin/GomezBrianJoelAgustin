@@ -10,10 +10,15 @@
 <body>
     
     <!--Consumimos dos apis, un html y un boton que diga buscar, cuando lo apreto es una llamada con fetch a random user, eso me devuelve el la informacion json, de esa informacion buscar longitude y latitude de esa persona. Una vez que ande eso dibujar con la api de mapas, en la cual aparecera un punto de donde vive esa persona -->
-    
-    <button id="userSearch" onclick="userSearch()">Buscar</button>
+    <section id="pjContainer">
 
-    <div id="pj"></div>
+        <h1>Buscador de personas</h1>
+
+        <button id="userSearch" onclick="userSearch()">Buscar</button>
+
+        <div id="pj"></div>
+        
+    </section>
 
     <div id="map"></div>
 
