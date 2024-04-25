@@ -48,6 +48,10 @@ function userSearch(){
                 [latitudeUser, longitudeUser]
             ]).addTo(map);
 
-        });
+        })
+
+        .catch(erorr => console.log(error))
+            document.getElementById("error").innerHTML = (error)
+
      
 }
