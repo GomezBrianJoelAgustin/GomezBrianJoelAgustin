@@ -27,13 +27,26 @@ function userSearch(){
             </div>
             `;
 
-            const map = L.map('map').setView([longitudeUser, latitudeUser], 13);
+            const map = L.map('map').setView([latitudeUser, longitudeUser], 3);
 
             const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 maxZoom: 19,
                 attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
             })
             .addTo(map);
+
+            var marker = L.marker([latitudeUser, longitudeUser]).addTo(map);
+
+            var circle = L.circle([latitudeUser, longitudeUser], {
+                color: 'red',
+                fillColor: '#f03',
+                fillOpacity: 0.5,
+                radius: 100
+            }).addTo(map);
+
+            var polygon = L.polygon([
+                [latitudeUser, longitudeUser]
+            ]).addTo(map);
 
         });
      
