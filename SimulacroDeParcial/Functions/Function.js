@@ -1,21 +1,30 @@
 const pjs = [];
+const result1 = 0;
 
-function agregarPj(){
+function buscarMayor(){
 
     const pjId = document.getElementById("pjId").value;
 
     pjs.push(pjId)
     
-    const result1= Math.max(...pjs)
-
-    console.log(pjs);
+    if (pjs.length === 10) {
+  
+        const result1= Math.max(...pjs)
+        console.log(pjs);
+        console.log(result1);
+    }return
+   
     console.log(result1)
+};
+
+function containerPj(result1){
+    alert(result1)
 
     fetch (`https://rickandmortyapi.com/api/character/${result1}`)
     .then (res => res.json())
     .then (data =>{
 
-        console.log(data);
+        console.log(result1);
 
         const containerPj = document.getElementById("containerPj");
         containerPj.innerHTML = `
@@ -24,5 +33,4 @@ function agregarPj(){
         <h1>${data.species}</h1>
         `;
     })
-
 }
