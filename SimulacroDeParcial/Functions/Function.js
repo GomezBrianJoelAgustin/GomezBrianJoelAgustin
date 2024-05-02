@@ -1,36 +1,73 @@
 const pjs = [];
-const result1 = 0;
+const maxId = [0];
 
 function buscarMayor(){
 
     const pjId = document.getElementById("pjId").value;
 
     pjs.push(pjId)
+
+    if (pjs.length == 9) {
+        
+        alert("Ya se ingresaron 10 numeros")
+
+        for (i=0; i <= pjs.length; i ++){
+            if (pjs[i] > maxId[0]) {
+                maxId[0] = pjs[i];
+            } 
+        };
+        
+        console.log("Array = " + pjs)
+        console.log("La Id mayor es = " + maxId)
+        personajes(maxId)
+    };
     
-    if (pjs.length === 10) {
-  
-        const result1= Math.max(...pjs)
-        console.log(pjs);
-        console.log(result1);
-    }return
-   
-    console.log(result1)
-};
+}; 
 
-function containerPj(result1){
-    alert(result1)
 
-    fetch (`https://rickandmortyapi.com/api/character/${result1}`)
+function personajes (maxId){
+
+    fetch (`https://rickandmortyapi.com/api/character/${maxId[0]}`)
     .then (res => res.json())
-    .then (data =>{
+    .then (dataRym =>{
 
-        console.log(result1);
+        fetch (`https://randomuser.me/api/`)
+        .then(respuesta => respuesta.json())
+        .then (dataRu =>{
 
-        const containerPj = document.getElementById("containerPj");
-        containerPj.innerHTML = `
-        <img src="${data.image}" alt="">
-        <h1>${data.name}</h1>
-        <h1>${data.species}</h1>
-        `;
+            console.log(dataRym)
+            console.log(dataRu)
+
+            if ( dataRym.species === "Human") {
+                const containerPj = document.getElementById("containerPj");
+                containerPj.innerHTML = `
+                <div id="containerPhoto">
+                    <img src="${dataRym.image}" alt="">
+                    <img src="${dataRu.results[0].picture.large}" alt="">
+                </div>
+                `;
+            };
+
+            if (dataRym.species != "Human") {
+                const containerPj = document.getElementById("containerPj");
+                containerPj.innerHTML = `
+                <div id="containerPhoto">
+                    <img src="${dataRu.results[0].picture.large}" alt=""></img>
+                </div>    
+
+                <div id="containerInfo">
+                    <h3>Nombre: ${dataRu.results[0].name.first}</h3>
+                    <h3>Apellido: ${dataRu.results[0].name.last}</h3>
+                    <h3>Gmail: ${dataRu.results[0].email}</h3>
+                </div>
+                `
+            }
+
+         });
+
     })
-}
+
+    .catch(erorr => console.log(error))
+        document.getElementById("error").innerHTML = "El error es: " + (error)
+
+};

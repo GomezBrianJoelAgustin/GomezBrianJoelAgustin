@@ -6,7 +6,6 @@
 
 .infoPjs{
     display: flex;
-    justify-content: space-between;
     align-items: center;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -14,8 +13,9 @@
     box-shadow: 0 0 0 2px #000;
 }
 
+
 .infoPjs img{
-    padding: 10px 10px 10px 10pxss;
+    padding: 10px 10px 10px 10px;
 }
 
 
