@@ -41,9 +41,9 @@ function personajes (maxId){
             if ( dataRym.species === "Human") {
                 const containerPj = document.getElementById("containerPj");
                 containerPj.innerHTML = `
-                <div id="containerPhoto">
+                <div id="containerPhotoHuman">
                     <img src="${dataRym.image}" alt="">
-                    <img src="${dataRu.results[0].picture.large}" alt="">
+                    <img id= "ruImg" src="${dataRu.results[0].picture.large}" alt="">
                 </div>
                 `;
             };
