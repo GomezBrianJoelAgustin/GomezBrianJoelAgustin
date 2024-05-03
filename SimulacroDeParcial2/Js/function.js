@@ -19,7 +19,7 @@ function buscarPersonajes1(){
         };
 
         console.log("Los datos del primer array son: " + pjs1)
-        mostrarPjs(pjs1)
+        pasajeDeDatos(pjs1)
 
     } else{
         alert("Numero no valido")
@@ -43,46 +43,37 @@ function buscarPersonajes2(){
         };
 
         console.log("Los datos del segundo array son: " + pjs2)
-        mostrarPjs2(pjs2)
-        
+        pasajeDeDatos(pjs2)
+
     } else {
         alert("Numero no valido")
     }
 }
 
-function mostrarPjs(pjs1){
-        
-    fetch(`https://rickandmortyapi.com/api/character/${pjs1}`)
-    .then (res => res.json())
-    .then (data => {
+function pasajeDeDatos(pjs1,pjs2){
 
-        console.log(data)
-
-        containerPersonajes1.innerHTML = `
-        <div id="containerPhotos">
-            <img src="${data[0].image}" alt="">
-            <img src="${data[1].image}" alt="">
-            <img src="${data[2].image}" alt="">
-        </div>
-        `        
-    })
-
+    let personajes = pjs1.concat(pjs2) 
+    mostrarPjs(personajes)
 }
 
-function mostrarPjs2(pjs2){
-
-    fetch(`https://rickandmortyapi.com/api/character/${pjs2}`)
+function mostrarPjs(personajes){
+        
+    fetch(`https://rickandmortyapi.com/api/character/${personajes}`)
     .then (res => res.json())
     .then (data => {
 
         console.log(data)
 
-        containerPersonajes2.innerHTML = `
-        <div id="containerPhotos">
-            <img src="${data[0].image}" alt="">
-            <img src="${data[1].image}" alt="">
-            <img src="${data[2].image}" alt="">
-        </div>
-        `         
+        for (let i = 0; i < 7; i++) {
+            
+            containerPersonajes.innerHTML = `
+            <div id="containerPhotos">
+                <img src="${data[i].image}" alt="">
+                <img src="${data[i+1].image}" alt="">
+                <img src="${data[i+2].image}" alt="">
+            </div>
+            `
+        }        
     })
+
 }
