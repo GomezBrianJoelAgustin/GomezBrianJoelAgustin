@@ -54,6 +54,7 @@ function pasajeDeDatos(pjs1,pjs2){
 
     let personajes = pjs1.concat(pjs2) 
     mostrarPjs(personajes)
+    console.log(personajes)
 }
 
 function mostrarPjs(personajes){
@@ -64,16 +65,17 @@ function mostrarPjs(personajes){
 
         console.log(data)
 
-        for (let i = 0; i < 7; i++) {
             
             containerPersonajes.innerHTML = `
             <div id="containerPhotos">
-                <img src="${data[i].image}" alt="">
-                <img src="${data[i+1].image}" alt="">
-                <img src="${data[i+2].image}" alt="">
+                <img src="${data[0].image}" alt="">
+                <img src="${data[1].image}" alt="">
+                <img src="${data[2].image}" alt="">
+                <img src="${data[3].image}" alt="">
+                <img src="${data[4].image}" alt="">
+                <img src="${data[5].image}" alt="">
             </div>
-            `
-        }        
+            `      
     })
 
 }
