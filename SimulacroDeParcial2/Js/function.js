@@ -39,7 +39,9 @@ function buscarPersonajes2(){
 
             btn2.Disable = true;
             alert("Ya se ingresaron 3 numeros")
-
+            let personajes = pjs1.concat(pjs2) 
+            mostrarPjs(personajes)
+            console.log(personajes)
         };
 
         console.log("Los datos del segundo array son: " + pjs2)
@@ -50,12 +52,8 @@ function buscarPersonajes2(){
     }
 }
 
-function pasajeDeDatos(pjs1,pjs2){
 
-    let personajes = pjs1.concat(pjs2) 
-    mostrarPjs(personajes)
-    console.log(personajes)
-}
+
 
 function mostrarPjs(personajes){
         
@@ -68,12 +66,12 @@ function mostrarPjs(personajes){
             
             containerPersonajes.innerHTML = `
             <div id="containerPhotos">
-                <img src="${data[0].image}" alt="">
-                <img src="${data[1].image}" alt="">
-                <img src="${data[2].image}" alt="">
-                <img src="${data[3].image}" alt="">
-                <img src="${data[4].image}" alt="">
-                <img src="${data[5].image}" alt="">
+                <img src="${data[0].image}">
+                <img src="${data[1].image}"> 
+                <img src="${data[2].image}"> 
+                <img src="${data[3].image}"> 
+                <img src="${data[4].image}"> 
+                <img src="${data[5].image}"> 
             </div>
             `      
     })
