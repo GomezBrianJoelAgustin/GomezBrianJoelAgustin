@@ -1,0 +1,11 @@
+#containerPersonajes1{
+    flex: auto;
+    justify-content: space-between;
+    padding-top: 10vh;
+}
+
+#containerPersonajes2{
+    flex: auto;
+    justify-content: space-between;
+    padding-top: 10vh;
+}

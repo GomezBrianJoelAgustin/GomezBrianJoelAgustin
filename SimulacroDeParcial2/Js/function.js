@@ -19,7 +19,6 @@ function buscarPersonajes1(){
         };
 
         console.log("Los datos del primer array son: " + pjs1)
-        pasajeDeDatos(pjs1)
 
     } else{
         alert("Numero no valido")
@@ -45,7 +44,6 @@ function buscarPersonajes2(){
         };
 
         console.log("Los datos del segundo array son: " + pjs2)
-        pasajeDeDatos(pjs2)
 
     } else {
         alert("Numero no valido")
@@ -63,17 +61,32 @@ function mostrarPjs(personajes){
 
         console.log(data)
 
-            
-            containerPersonajes.innerHTML = `
-            <div id="containerPhotos">
-                <img src="${data[0].image}">
-                <img src="${data[1].image}"> 
-                <img src="${data[2].image}"> 
-                <img src="${data[3].image}"> 
-                <img src="${data[4].image}"> 
-                <img src="${data[5].image}"> 
-            </div>
-            `      
+        for (let i = 0; i < data.length; i++) {
+            for (let j = 0; j < pjs1.length; j++) {
+
+                if (data[i].id == pjs1[j]) {
+                    containerPersonajes1.innerHTML += `
+                    <div id="containerPhotosPersonaje1">
+                        <img src="${data[i].image}">
+                    </div>
+                    `     
+                }
+            }
+        }
+
+        for (let i = 0; i < data.length; i++) {
+            for (let j = 0; j < pjs2.length; j++) {
+
+                if (data[i].id == pjs2[j]) {
+                    containerPersonajes2.innerHTML += `
+                    <div id="containerPhotosPersonaje2">
+                        <img src="${data[i].image}">
+                    </div>
+                    `     
+                }
+            }
+        }         
+  
     })
 
 }
