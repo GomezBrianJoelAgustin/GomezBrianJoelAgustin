@@ -17,6 +17,21 @@ class Empleado extends Persona{
         this.legajo = legajo;
     }
 
+    mostrarEmpleado(){
+        return  empleado.innerHTML= 
+        ` 
+        <div id="containerPersona">
+            <h1> Empleado </h1>
+            <p> Name: ${this.name} </p>
+            <p> Lastname: ${this.lastName} </p>
+            <p> Gender: ${this.gender} </p>
+            <p> City: ${this.city} </p>
+            <p> Gmail: ${this.gmail} </p>
+            <p> Legajo: ${this.legajo} </p>
+        </div> 
+        `
+     }
+
 }
 
 class Cliente extends Persona{
@@ -25,6 +40,21 @@ class Cliente extends Persona{
         super(name, lastName, gender, city, gmail)
         this.numeroCuenta = numeroCuenta;
     }
+
+    mostrarCliente(){
+        return  cliente.innerHTML= 
+        ` 
+        <div id="containerPersona">
+            <h1> Cliente </h1>
+            <p> Name: ${this.name} </p>
+            <p> Lastname: ${this.lastName} </p>
+            <p> Gender: ${this.gender} </p>
+            <p> City: ${this.city} </p>
+            <p> Gmail: ${this.gmail} </p>
+            <p> Numero de cuenta: ${this.numeroCuenta} </p>
+        </div> 
+        `
+     }
 
 }
 
@@ -40,9 +70,11 @@ function getPersona(){
         if (datos.dob.age> 18) {
         const personarandom = new Empleado(datos.name.first, datos.name.last, datos.gender, datos.location.city, datos.email, datos.location.street.number);
         console.log (personarandom);
+        personarandom.mostrarEmpleado();
         } else {
             const personarandom = new Cliente(datos.name.first, datos.name.last, datos.gender, datos.location.city, datos.email, datos.location.street.number);
             console.log (personarandom);
+            personarandom.mostrarCliente();
         }
 
         

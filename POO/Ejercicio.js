@@ -11,9 +11,18 @@ class Persona{
     }
 
     //Despues mostrarlo en pantalla y no consola
-    // mostrarPersona(){
-    //    return ``
-    // }
+    mostrarPersona(){
+        return  persona.innerHTML= 
+        ` 
+        <div id="containerPersona">
+            <p> Name: ${this.name} </p>
+            <p> Lastname: ${this.lastName} </p>
+            <p> Gender: ${this.gender} </p>
+            <p> City: ${this.city} </p>
+            <p> Gmail: ${this.gmail} </p>
+        </div> 
+        `
+     }
 }
 
 
@@ -26,6 +35,7 @@ function getPersona(){
         let datos = data.results[0]
         const personarandom = new Persona(datos.name.first, datos.name.last, datos.gender, datos.location.city, datos.email);
         console.log (personarandom);
+        personarandom.mostrarPersona();
     })
 
 }
