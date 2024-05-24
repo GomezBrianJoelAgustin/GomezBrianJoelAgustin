@@ -8,11 +8,15 @@
 <body>
 
     <h1>Armani en la seleccion</h1>
-    
-    <input type="number" placeholder="1000">
 
-    <button onclick="">Depositar</button>
-    <button onclick="">Retirar</button>
-    <button onclick="">Consultar</button>
+    <input type="number" placeholder="1000" id="valorDepositar">
+    <button onclick="depositarSaldo()" id="btnDepositar">Depositar</button>
+    
+    <input type="number" placeholder="1000" id="valorRetirar">
+    <button onclick="retirarSaldo()" id="btnRetirar">Retirar</button>
+
+    <button onclick="consultarSaldo()" id="btnConsultar">Consultar</button>
+
+    <script src="Ejercicio1.js"></script>
 </body>
 </html>
