@@ -1,10 +1,10 @@
 //Crear los objetos clientes y cuenta_bancaria. (listo)
 //Los atributos de cliente son: nombre, apellido, fechaDeNacimiento (DD/MM/AAAA). (listo)
-//Los metodos de cuenta_bancaria son: consultar_Saldo, depositar y retirar. 
-//Los atributos de cuenta_bancaria son los que consideremos. 
-//Deberias poder asignarle una cuenta bancaria a un cliente y tengo que poder hacer los tres metodos.
-//Deberia poder retirar si hay saldo suficiente.
-//Se puede depositar hasta 1.000. 
+//Los metodos de cuenta_bancaria son: consultar_Saldo, depositar y retirar. (listo)
+//Los atributos de cuenta_bancaria son los que consideremos. (listo)
+//Deberias poder asignarle una cuenta bancaria a un cliente y tengo que poder hacer los tres metodos. (listo)
+//Deberia poder retirar si hay saldo suficiente. (listo)
+//Se puede depositar hasta 1.000.  (listo)
 //Para poder abrir una cuenta bancaria el cliente tiene que ser mayor de edad. (listo)
 
 class Cliente {
@@ -46,13 +46,31 @@ class Cuenta_bancaria{
             throw new Error("El cliente debe ser mayor de edad para abrir una cuenta bancaria");
         }
 
-        this._saldo = saldo;
+        this.saldo = saldo;
         this.id = id;
         this.cliente = cliente;
    }
 
    saldoDisponible(){
-    return "El saldo disponeble es de " + this._saldo;
+    return "El saldo disponeble es de " + this.saldo;
+   }
+
+   depositar(valorDepositar){
+    if (valorDepositar > 1000 || valorDepositar < 0) {
+        throw new Error ("No se puede ingresar esa cantidad de monto")
+    } 
+        this.saldo += Number(valorDepositar);
+
+        return console.log("El saldo depositado fue " + valorDepositar)
+   }
+
+   retirar(valorRetirar){
+    if (valorRetirar > this.saldo || valorRetirar < 0) {
+        throw new Error("No se puede retirar ese monto")
+    }
+    this.saldo -= valorRetirar;
+
+    return console.log("El saldo retirado fue " + valorRetirar)
    }
  
 }
@@ -65,4 +83,18 @@ function consultarSaldo(){
     
     const btnConsultar = document.getElementById("btnConsultar");
     console.log(cuenta.saldoDisponible())
+}
+
+function depositarSaldo(){
+
+    const valorDepositar = document.getElementById("valorDepositar").value;
+
+    cuenta.depositar(valorDepositar)
+}
+
+function retirarSaldo(){
+
+    const valorRetirar = document.getElementById("valorRetirar").value;
+
+    cuenta.retirar(valorRetirar);
 }
